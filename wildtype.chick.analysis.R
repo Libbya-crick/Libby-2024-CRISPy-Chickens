@@ -177,6 +177,51 @@ p<- DotPlot(PRENEURAL,  features = c("FOXC2","MSGN1","PARAXIS","TBX6", "TBXT","F
 
 p
 
+## We plot the expression of known lineage markers (Figure S1C)
+
+blend <- TRUE
+x<- "SOX10" ## TBX6, CDX2, PAX7, MSGN1, IRX3, FOXC2
+y<- "FOXA2" ## SOX21, PAX6, NKX6-2, NKX1-2, OLIG2, NEUROG1
+p <- FeaturePlot(PRENEURAL, reduction = "umap", features = c(x,y),  blend = TRUE, blend.threshold = 0.1,
+                 cols = if (blend) {c("lightgrey", "blue", "red")} else {c("lightgrey", "blue")},  
+                 pt.size = 2,  combine = FALSE)
+p <- lapply(p, function(x) x + NoLegend())
+p<- CombinePlots(p)
+p
+
+## We additionally plot the expression of SOX2, SOX3, and TBXT overlap to identify neuromesodermal progenitors (Figure S1C)
+
+NMPs2.exp<- PRENEURAL@assays$RNA$data["SOX2",]
+NMPs3.exp<- PRENEURAL@assays$RNA$data["SOX3",]
+NMPst.exp<- PRENEURAL@assays$RNA$data["TBXT",]
+
+TBXT <- which(NMPt.exp>0 & NMPs2.exp==0 & NMPs3.exp==0)
+SOX2 <- which(NMPt.exp==0 & NMPs2.exp>0 & NMPs3.exp==0)
+SOX3 <- which(NMPt.exp==0 & NMPs2.exp==0 & NMPs3.exp>0)
+ALL <- which(NMPt.exp>0 & NMPs2.exp>0 & NMPs3.exp>0)
+TBXTSOX2 <- which(NMPt.exp>0 & NMPs2.exp>0 & NMPs3.exp==0)
+TBXTSOX3 <- which(NMPt.exp>0 & NMPs2.exp==0 & NMPs3.exp>0)
+SOX2SOX3 <- which(NMPt.exp==0 & NMPs2.exp>0 & NMPs3.exp>0)
+NEG <- which(NMPt.exp==0 & NMPs2.exp==0 & NMPs3.exp==0)
+
+cell_ids <- rep(0,dim(PRENEURAL@meta.data)[1])
+
+cell_ids[TBXT] <- 'TBXT+'
+cell_ids[SOX2] <- 'SOX2+'
+cell_ids[SOX3] <- 'SOX3+'
+cell_ids[TBXTSOX2] <- 'TBXT+/SOX2+'
+cell_ids[TBXTSOX3] <- 'TBXT+/SOX3+'
+cell_ids[SOX2SOX3] <- 'SOX2+/SOX3+'
+cell_ids[ALL] <- 'ALL+'
+cell_ids[NEG] <- 'Negative'
+
+PRENEURAL@meta.data['expression_type'] <- cell_ids
+
+options(repr.plot.width=20, repr.plot.height=15)
+p<- DimPlot(PRENEURAL, reduction = "umap", dims=c(1,2),
+            group.by = 'expression_type', cols = c("purple","grey","red", "red","red","dodgerblue", "purple","purple" ), pt.size = 6)
+p
+
 
 ## Later in paper we look into the Super Elongation Complex and plot the expression of associated genes (Figure 5D)
 
