@@ -206,6 +206,9 @@ screen_seq <- RunUMAP(screen_seq, dims = 1:20)
 plot3 <- DimPlot(screen_seq, reduction = "umap",label = TRUE,label.col = "white", pt.size = 1.5)
 plot3
 
+## save this file for reference as screen_seq.rds
+saveRDS(screen_seq, file = "directory of choice/screen_seq.rds")
+
 ## we then filtered out the contaminating blood from the dataset by plotting GATA2 and LMO2 expression and subsetting out the clusters with high dual expression
 
 FeaturePlot(screen_seq, features = c( "LMO2", "GATA2"), pt.size = 1)
