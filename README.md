@@ -6,8 +6,9 @@ Data and example workflows
 The Example_data folder in this repository contains example datasets that can be used to run relevant code.
 
 Analysis of Single Cell RNA Sequencing Datasets
-
-  - [wildtype dataset from HH10+HH13 chick]
+1. Wildtype dataset from HH10 and HH13 chicken embryos
+  - [wildtype seurat_pipeline] (
 2. Screen dataset analysis
   - [screen_seurat_pipline](Screen.analysis.R)
-  - [scMAGeCK_gene_misregulation_pipeline] (
+  - [scMAGeCK_gene_misregulation_pipeline](screen_scMAGeCK_pipeline.R)
+
