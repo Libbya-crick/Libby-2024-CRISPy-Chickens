@@ -7,5 +7,5 @@ The Example_data folder in this repository contains example datasets that can be
 
 Analysis of Single Cell RNA Sequencing Datasets
 
--[wildtype dataset from HH10+HH13 chick](
--[screen dataset](Screen.analysis.R)
+  - [wildtype dataset from HH10+HH13 chick]
+  - [screen dataset](Screen.analysis.R)
