@@ -1,0 +1,5 @@
+The single cell RNA sequencing datasets for both the wildtype and the screen are too large to keep on Github ... sorry :(
+You can find them in the following Gene Expression Omnibus repositories:
+
+1. wildtype from Rito, et al. - GSE223189
+2. screen dataset -
