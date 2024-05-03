@@ -3,13 +3,10 @@ This repository contians the code used in the manuscript titled "An in vivo CRIS
 
 Data and example workflows
 
-The Example_data folder in this repository contains example datasets that can be used to run relevant code.
-
-Analysis of Single Cell RNA Sequencing Datasets
-
-1. Wildtype dataset from HH10 and HH13 chicken embryos
+1. Wildtype dataset analysis from HH10 and HH13 chicken embryos
   - [wildtype seurat_pipeline](wildtype.chick.analysis.R)
   - [HCR_quantification_analysis](HCR.quantification.ploting.R)
+  - [HCR_example_dataset](HCR-SOX2-TBXT-F2RL1-Bcat_3D_nuclei_features_table_fullstack.csv)
 
 
 2. Screen dataset analysis
