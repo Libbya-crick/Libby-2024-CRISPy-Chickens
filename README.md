@@ -8,4 +8,6 @@ The Example_data folder in this repository contains example datasets that can be
 Analysis of Single Cell RNA Sequencing Datasets
 
   - [wildtype dataset from HH10+HH13 chick]
-  - [screen dataset](Screen.analysis.R)
+2. Screen dataset analysis
+  - [screen_seurat_pipline](Screen.analysis.R)
+  - [scMAGeCK_gene_misregulation_pipeline] (
