@@ -4,6 +4,7 @@ This repository contians the code used in the manuscript titled "An in vivo CRIS
 Data and example workflows
 
 1. Wildtype dataset analysis from HH10 and HH13 chicken embryos
+  - [scRNAseq wildtype dataset](single.cell.RNAseq.datasets.txt)
   - [wildtype seurat pipeline](wildtype.chick.analysis.R)
   - [slingshot pseudo-trajectory pipeline]
   - [HCR quantification analysis](HCR.quantification.ploting.R)
@@ -11,6 +12,7 @@ Data and example workflows
 
 
 2. Screen dataset analysis
+  - [scRNAseq screen dataset](single.cell.RNAseq.datasets.txt)
   - [screen seurat pipline](Screen.analysis.R)
   - [scMAGeCK gene misregulation pipeline](screen_scMAGeCK_pipeline.R)
 
