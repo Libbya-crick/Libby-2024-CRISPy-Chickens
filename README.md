@@ -6,7 +6,7 @@ Data and example workflows
 1. Wildtype dataset analysis from HH10 and HH13 chicken embryos
   - [scRNAseq wildtype dataset](single.cell.RNAseq.datasets.txt)
   - [wildtype Seurat(v5) pipeline](wildtype.chick.analysis.R)
-  - [slingshot pseudo-trajectory pipeline]
+  - [slingshot pseudo-trajectory pipeline](Slingshot_analysis.R)
   - [HCR quantification analysis](HCR.quantification.ploting.R)
   - [HCR example dataset](HCR-SOX2-TBXT-F2RL1-Bcat_3D_nuclei_features_table_fullstack.csv)
 
